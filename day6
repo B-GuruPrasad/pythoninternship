@@ -1,0 +1,128 @@
+# strings
+s=input()
+ch=0
+d=0
+for char in s:
+    if char.isalpha():
+        ch+=1
+    if char.isdigit():
+        d+=1
+print(ch,d)
+
+# count of vowels and consonence
+
+c=0
+v='aeiouAEIOU'
+for char in v:
+    c+=1
+print(c)
+
+s=input()
+
+print(s.replace(" ","-"))
+print(len(s))
+
+s="bitm students are good"
+print(s.title())
+
+
+
+s="bitm students are good"
+words=s.split()
+res=" "
+for word in words:
+    cap=word[0].upper()+word[1:]
+    res=res+cap+" "
+print(res)
+
+# reversing the string
+s="bitm students are good"
+s1=""
+for i in range(len(s)-1,-1,-1):
+    s1+=s[i]
+print(s1)
+
+# finding the max num
+s="i am learning python"
+word=s.split()
+print(len(max(word)))
+print(max(word))
+
+s=input("enter string:")
+l=s.split()
+length=0
+lword=''
+for word in l:
+    if len(word)>length:
+        length=len(word)
+        lword=word
+print(lword)
+print(length)
+
+
+# palindrome
+s=input("enter string:")
+if s==s[::-1]:
+    print("palindrome")
+else:
+    print("not palindrome")
+
+
+# remove duplicate in a string   *
+s=input("enter string:")
+res=" "
+for i in s:
+    if i not in res:
+        res+=i
+print(res)
+
+# membership operation            *
+find most repeated char in a string             *
+s=input("enter string:")
+a={}
+for i in s:
+    if i not in a:
+        a[i]=1
+    else:
+        a[i]+=1
+m=max(a.values())
+for i in a:
+    if a[i]==m:
+        print(i,m)
+
+
+# password
+p=input("enter string:")
+uc,lc,d,sp,cc=1,1,1,1,0
+sp_count=0
+c=0
+fc=0
+l=len(p)
+if not l>=6 and l<22:
+    c=1
+for i in range(l):
+    if p[i].isupper():
+        uc=0
+    if p[i].islower():
+        lc=0
+    if p[i].isdigit():
+        d=0
+    if p[i] in "!@$%^&*":
+        sp_count+=1
+    if sp_count>=2:
+        sp=0
+    if i+1<l and p[i]==p[i+1]:
+        cc=1
+fc+=uc+lc+d+sp+cc+c
+print(fc)
+
+
+s=input()
+ij=0,len(s)-1
+while i<=j:
+    if s[i]!=s[j]:
+        print(False)
+        break
+    i+=1
+    j-=1
+    print(True)
