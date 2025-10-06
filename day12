@@ -1,0 +1,68 @@
+y=578378923
+s=str(y)
+l=[]
+for i in s:
+    if i not in l:
+        l.append(i)
+a=len(s)
+b=len(l)
+c=a-b
+print(c)
+
+
+
+data,digit=map(int,input().split(" "))
+a=str(data)
+b=str(digit)
+c=0
+for i in a:
+    if i==b:
+        c+=1
+print(c)
+
+
+n=2245564632
+s=str(n)
+d={}
+m=3
+for i in s:
+    if i not in d:
+        d[i]=1
+    else:
+        d[i]+=1
+res=0
+for i in d:
+    if d[i]==m:
+        res=i
+print(res)
+
+
+
+
+l=[10,98,3,33,12,22,21,11]
+l1=[]
+l2=[]
+for i in l:
+    if i%2==0:
+        l1.append(i)
+    else:
+        l2.append(i)
+print(l1+l2)
+
+
+
+arr=[10,11,7,12,14]
+total=sum(abs(arr[i]-arr[i+1]) for i in range(len(arr)-1))
+print(total)
+
+
+# even and odd
+arr=[1,4,2,6,7,8,2,9,10,11]
+l=[]
+for i in arr:
+    if i%2==0:
+        l.append(i)
+for i in arr:
+    if i%2!=0:
+        l.append(i)
+print(l)
