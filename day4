@@ -1,0 +1,120 @@
+# police
+l=[1,-1,1-1,-1,1,1,1]
+p=0
+uns=0
+for i in l:
+    if i==-1:
+        if p>0:
+            p-=1
+        else:
+            uns+=1
+    else:
+        p+=i
+print(uns)
+
+nums=[1,2,3,4]
+sum=[]
+for i in nums:
+    nums[i]=nums[i]+nums[i+1]
+return nums
+
+nums=[2,3,5,4,1,7]
+sum=[]
+n=int(len(nums)/2)
+for i in range(n):  
+    sum.append(nums[i])
+    sum.append(nums[i+n])
+print(sum)
+
+
+# 3rd maximum number
+nums=[3,2,1,4]
+nums.sort(reverse=True)
+if len(nums)>3:
+    print(nums[0])
+print(nums[2])
+
+# 3rd max num in leetcode
+nums=list(set(nums))
+nums.sort(reverse=True)
+if len(nums)<3:
+    return nums[0]
+return nums[2]
+
+
+# Baseball Game
+ops= ["5","2","C","D","+"]
+list=[]
+for i in ops:
+moves zeros
+a=0
+nums=[0,1,0,3,12]
+for i in range(len(nums)):
+    if nums!=0:
+        nums[a],nums[i]=nums[i],nums[a]
+        a+=1
+print(a)
+
+# plus one
+digits=[1,2,3]
+for i in range(len(digits)-1,-1,-1):
+    if(digits[i]!=9):
+        digits[i]=digits[i]+1
+        print(digits)
+    elif(digits[i]==9):
+        digits[i]=0
+        print(digits+[1])
+
+
+# 121. Best Time to Buy and Sell Stock
+prices = [7,1,5,3,6,4]
+
+
+# 27. max num
+l=[3,2,2,31,0,3,5,6,7,1,9]
+l.sort(reverse=True)
+print(l[0],l[1])
+
+
+# 1299. Replace Elements with Greatest Element on Right Side
+nums=[17,18,5,4,6,1]
+a=[]
+for i in range(len(nums)-1):
+    m=max(nums[i+1:])
+    a.append(m)
+result=a+[-1]
+print(result)
+
+
+# bitwise operator
+check num is even or odd without using modules(%).
+n=int(input("enter number:  "))
+if n & 1==0:
+    print("even")
+else:
+    print("odd")
+
+
+# swapping 2 num without using a,b=b,a or temp
+a=int(input("enter number:"))
+b=int(input("enter number:"))
+a=a^b
+b=a^b
+a=a^b
+print(a,b)
+
+# finding the bit number
+
+def n (nums): 
+    if nums%4==1:
+        return 1
+    elif nums%4==2:
+        return nums+1
+    elif nums%4==3:
+        return 0
+    else:
+        return nums
+l,r=map(int,input().split())
+a=n(r)
+b=n(l-1)
+print(a^b)
