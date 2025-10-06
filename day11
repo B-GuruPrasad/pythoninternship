@@ -1,0 +1,109 @@
+# class Node:
+    def __init__(self,root):
+        self.data=root
+        self.left=None
+        self.right=None
+
+root=Node(10)
+root.left=Node(5)
+root.right=Node(20)
+root.left.left=Node(2)
+root.left.right=Node(8)
+root.right.left=Node(15)
+root.right.right=Node(25)
+root.left.left.left=Node(1)
+
+def postorder(root):
+    if(root==None):
+        return
+    postorder(root.left)
+    postorder(root.right)
+    print(root.data,end=" ")
+
+def inorder(root):
+    if(root==None):
+        return
+    inorder(root.left)
+    print(root.data,end=" ")
+    inorder(root.right)
+
+def preorder(root):
+    if(root==None):
+        return
+    print(root.data,end=" ")
+    preorder(root.left)
+    preorder(root.right)
+
+print(postorder(root))
+print(preorder(root))
+print(inorder(root))
+
+
+
+
+
+def level_of_order(root):
+    q=[]
+    q.append(root)
+    while len(q)!=0:
+        root=q.pop(0)
+        print(root.data,end=" ")
+        if root.left is not None:
+            q.append(root.left)
+        if root.right is not None:
+            q.append(root.right)
+level_of_order(root)
+
+
+def sum_of_nodes(root):
+    if root is None:
+        return 0
+    return root.data+sum_of_nodes(root.left)+sum_of_nodes(root.right)
+
+
+print(sum_of_nodes(root))
+
+
+def sum_of_even_nodes(root):
+    if root is None:
+        return 0
+    current=root.data if root.data%2==0 else 0
+    return current+sum_of_even_nodes(root.left)+sum_of_even_nodes(root.right)
+
+
+print(sum_of_even_nodes(root))
+
+
+
+def height_of_tree(root):
+    if root==None:
+        return -1
+    else:
+        return 1+max(height_of_tree(root.left),height_of_tree(root.right))
+
+
+print(height_of_tree(root))
+
+
+
+
+def topview(root):
+    print()
+    q=[]
+    d=dict()
+    root.level=0
+    q.append(root)
+    while len(q)!=0:
+        root=q.pop(0)
+        if root.level not in d:
+            d[root.level]=root.data
+        if root.left is not None:
+            q.append(root.left)
+            root.left.level=root.level-1
+        if root.right is not None:
+            q.append(root.right)
+            root.right.level=root.level+1
+    for i in sorted(d):
+        print(d[i],end=" ")
+
+print(topview(root))
