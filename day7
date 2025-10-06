@@ -1,0 +1,229 @@
+c=0
+v="IceCreAm"
+for char in v:
+    
+    c+=1
+print(c)
+
+
+# length of the longest palindrome
+s="abba"
+m=0
+for c in range(len(s)):
+    l,r=c,c
+    while l>=0 and r<len(s) and s[l]==s[r]:
+        m=max(m,r-l+1)
+        l-=1
+        r+=1
+    l,r=c,c+1
+    while l>=0 and r<len(s) and s[l]==s[r]:
+        m=max(m,r-l+1)
+        l-=1
+        r+=1
+print(m)
+
+
+# function concept              *
+def qwer():
+    print("hi")
+    asd()
+def asd():
+    print("hello")
+    qwer()
+qwer()
+print(2)
+
+
+def qwer(x):
+    print("hi",x)
+c=qwer(10)+600
+print(c)
+
+
+import sys
+sys.setrecursionlimit(2000)
+def qwer(x):
+    print("hi",x)
+    qwer(x+1)
+qwer(1)
+
+
+# square the num
+def sqr(n):
+    return n*n
+
+a=sqr(5)
+print(a)
+
+s=lambda n:n*n
+n=int(input())
+res=s(n)
+print(res)
+
+
+f=lambda a,b:a+b
+n=int(input())
+m=int(input())
+res=f(n,m)
+print(res)
+
+
+f=lambda a,b:a+b
+res=f(2,4)
+print(res)
+
+# filter 
+def even(n):
+    return n%2==0
+nums=[1,2,3,4,5,6,7,8,9]
+evens=list(filter(even,nums))
+print(evens)
+
+without using function
+nums=[1,2,3,4,5,6,7,8,9]
+evens=list(filter(lambda n:n%2==0,nums))
+print(evens)
+
+
+
+# doubles the values using map function
+def update(n):
+    return n*2
+nums=[1,2,3,4,5,6,7,8,9]
+evens=list(filter(lambda n:n%2==0,nums))
+doubles=list(map(update,nums))
+print(doubles)
+
+
+nums=[1,2,3,4,5,6,7,8,9]
+evens=list(filter(lambda n:n%2==0,nums))
+doubles=list(map(lambda n:n*2,evens))
+print(doubles)
+
+
+# printing the even number with double
+from functools import reduce
+nums=[1,2,3,4,5,6,7,8,9]
+evens=list(filter(lambda n:n%2==0,nums))
+doubles=list(map(lambda n:n*2,evens))
+num=reduce(lambda a,b:a+b,doubles)
+print(doubles)
+print(num)
+
+
+
+ 
+
+def reversed(n):
+    rev=0
+    while n!=0:
+        d=n%10
+        rev=rev*10+d
+        n=n//10
+    print(rev)
+n=int(input("enter:"))
+reversed(n)
+
+def primen(n):
+      
+    flag=0
+    for i in range(2,n):
+        if n%i==0:
+            flag+=1
+    if flag==0:
+                print("not prime")
+    else:
+        print("prime")
+
+n=int(input("enter:"))
+primen(n)
+
+
+def nums(n):
+    if n==0:
+        return
+    print(n,end=" ")
+    nums(n-1)
+n=int(input())
+nums(n)
+
+
+def nums(n):
+    if n==0:
+        return
+    nums(n-1)
+    print(n,end=" ")
+    
+n=int(input())
+nums(n)
+
+
+
+# print 5 4 3 2 12 3 4 5 if input is 5
+def nums(n):
+    if n==0:
+        return
+    print(n,end=" ")
+    nums(n-1)
+    if n!=1:
+        print(n,end=" ")
+n=int(input())
+nums(n)
+
+
+# find factorial of a number
+def fact(n):
+    if n==0 or n==1:
+        return 1
+    return n*fact(n-1)
+    
+n=int(input())
+print(fact(n))
+
+
+# reversing the number
+def rev_num(n,rev=0):
+    if n==0:
+        return rev
+    return rev_num(n//10,rev*10+n%10)
+n=int(input())
+print(rev_num(n))
+
+
+
+# check whether given number is palindrome or not
+def palindrome(n,rev=0,temp=None):
+    if temp is None:
+        temp=n
+    if n==0:
+        return temp==rev
+    return palindrome(n//10,rev*10+n%10,temp)
+n=int(input())
+print(palindrome(n))
+
+
+# check given input is perfect square or not
+def square(n,i=1):
+    if i*i==n:
+        return True
+    i+=1
+    return False
+n=int(input())
+print(square(n))
+
+
+
+
+def power(a,b):
+    return a**b
+a=int(input())
+b=int(input())
+print(power(a,b))
+
+def isprime(n):
+    for i in range(2,(n//2)+1):
+        if n%i==0:
+            return False
+    return True
+n=int(input())
+print(isprime(n))
