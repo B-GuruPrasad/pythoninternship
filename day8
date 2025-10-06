@@ -1,0 +1,39 @@
+def p(a,b):
+    if b==0:
+        return 1
+    return a*p(a,b-1)
+a,b=map(int,input().split())
+print(p(a,b)) 
+
+
+
+# reduce power by 1
+def fun(n):
+    if n==1:
+        return 0
+    elif n%2==0:
+        return 1+fun(n//2)
+    else:
+        return 1+min(fun(n-1),fun(n+1))
+n=int(input())
+print(fun(n))
+
+
+stack=[]
+stack.append(3)
+stack.append(5)
+stack.append(6)
+stack.append(9)
+stack.append(1)
+stack.pop()
+print(stack)
+
+# stack problem
+s="ab*c**def"
+l=[]
+for i in s:
+    if i=="*":
+        l.pop()
+    else:
+        l.append(i)
+print(l)
