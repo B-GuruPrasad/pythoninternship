@@ -1,0 +1,48 @@
+t=(1,2,5,6,7,8,10)
+a=t[:i]+t[i+1:]
+print(a)
+counting the specific num
+t=(1,2,3,4,5,4,4)
+print(t.count(4))
+
+
+s=()  
+res={s for s[1,2,3] if s%2}
+print(res)
+
+
+student_marks={
+    'sita':95,
+    'aakash':80,
+    'anvesh':56,
+    'honey':41,
+    'malesh':15,
+    'arjun':54,
+    'mani':29
+}
+dict={}
+for student in student_marks:
+    marks=student_marks[student]
+    if marks>90:
+        dict[student]='A'
+    elif marks>80:
+        dict[student]='B'
+    elif marks>56:
+        dict[student]='C'
+    elif marks>41:
+        dict[student]='D'
+    elif marks>15:
+        dict[student]='E'
+    elif marks>54:
+        dict[student]='F'
+    elif marks>29:
+        dict[student]='G'
+print(dict)
+
+
+
+txt = "Hello, welcome to my world."
+
+x = txt.index("welcome")
+
+print(x)
